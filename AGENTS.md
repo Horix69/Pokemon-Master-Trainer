@@ -1,0 +1,1 @@
+Para cada alteração entregue neste projeto, atualize a versão da pasta e do ZIP, preservando o prefixo exato Projeto_Pokemon_boardgame_versão. A versão inicial é 1.0. Incremente primeiro a casa decimal: 1.1, 1.2, …, 1.9, 2.0. Use o mesmo nome na pasta interna do ZIP e sincronize a versão no package.json (1.0.0 para a entrega 1.0).

@@ -1,0 +1,2 @@
+{"compilerOptions":{"strict":true,"jsx":"react-jsx","target":"ES2022","module":"ESNext","moduleResolution":"bundler","allowJs":true,"allowImportingTsExtensions":true,"noEmit":true,"skipLibCheck":true},"include":["ui/*.tsx","ui/*.ts"]}
+

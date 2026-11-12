@@ -1,0 +1,96 @@
+/* A felt playing surface, warm paper and copper fittings. */
+:root {
+  --felt:#143e3f; --felt-deep:#0c272d; --paper:#fff9e9; --shade:#e7d9bb;
+  --copper:#d9ad69; --charcoal:#193337; --accent:#aa462e;
+  --display:Bahnschrift,"Trebuchet MS","Segoe UI",sans-serif;
+}
+#gameShell {
+  min-height:100dvh;
+  background:radial-gradient(ellipse at 7% 10%,#39736a66,transparent 44%),
+    repeating-linear-gradient(120deg,transparent 0 7px,#8bb5a905 7px 8px),
+    linear-gradient(128deg,var(--felt),var(--felt-deep) 79%);
+}
+#gameShell header {background:#102a30;color:#fff7df;border:0;border-bottom:1px solid #d5b7795c;height:57px}
+.brand {font:750 21px var(--display);letter-spacing:-.045em}.brand .ball{width:27px;height:27px}
+nav .active{box-shadow:inset 0 -3px var(--copper)}
+#gameShell .musicbar {background:#19383c;color:#e9e9d9;border:0;border-bottom:1px solid #86a39833;font-size:12px}
+.musicbar button,.musicbar select{background:#ffffff0d;color:#fff5de;border:1px solid #bacfba4a;border-radius:18px}.musicbar select option{background:#183539;color:white}
+#gameShell main{padding:20px clamp(14px,3.3vw,66px) 36px;max-width:1640px}
+.mapsection,#panel,#activity,.tray,dialog{border-radius:16px}
+#gameShell .layout{gap:20px;grid-template-columns:minmax(0,1fr) minmax(270px,29%)}
+#gameShell .mapsection{border:4px solid #293e3c;box-shadow:0 0 0 1px #bd9e65,0 5px 0 #081f23,0 16px 38px #071c2399;overflow:hidden}
+.maphead{padding:9px 14px;background:linear-gradient(105deg,#273e3a,#172e30);color:#ffdf9c}
+.maphead h1{font:700 24px var(--display);letter-spacing:-.04em;margin:0}
+#teamDock{display:flex;gap:12px;align-items:center;padding:3px 14px;min-height:35px;background:#183331;color:#fff1c9;font-size:12px;border-top:1px solid #ffffff18}
+#teamDock[hidden]{display:none}.dockChips{display:flex;align-items:center;gap:3px;overflow:auto;flex:1}
+.dockChips button{flex:none;background:transparent;border:0;padding:0;line-height:0}.dockChip{width:29px}.dockChips span{color:#cfdbce}
+#actionBar{background:#e7d7ad;color:#253f38;border:0;border-radius:10px;font-size:14px;margin:0 0 15px;padding:10px 15px}
+#actionBar b{color:#5f3c18;border-color:#aa8f65}.legend{padding:9px 14px}
+#panel,.tray,#activity{background:var(--paper);border:1px solid #bfa878;box-shadow:0 4px 0 #112720,0 9px 20px #071e234d}
+#panel{padding:18px}.trainerPlate{display:flex;align-items:center;gap:14px;margin:-18px -18px 13px;padding:18px;background:radial-gradient(ellipse at 4% 100%,#788b65,#274746 66%);color:#fff1c8;border-bottom:3px solid var(--seat)}
+.trainerPlate img{width:52px;height:65px;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(2px 2px #193332)}
+.trainerPlate small,.trainerPlate span{font-size:12px}.trainerPlate h2{font:750 27px var(--display);margin:2px 0}
+h2,h3,.maphead b,.tray h3,.modalhead h2,aside h2{font-family:var(--display)}
+.powerTrack progress{height:8px;accent-color:#42967e}.btn.primary,.primary.wide{background:linear-gradient(#bd583a,#983f2b);color:#fffaeb;border-color:#843c2b;box-shadow:inset 0 1px #e8a985,0 3px 0 #68372b}
+.handCard{display:grid;justify-items:center;padding:5px;background:transparent;border:0;max-width:92px;font-size:10px}
+.handCard .cardface{height:77px;margin:0 0 5px;filter:drop-shadow(0 2px 2px #0004);transform:rotate(-2deg)}.handCard:hover .cardface{transform:rotate(0) translateY(-3px)}
+/* Preparação: ilustração e ficha de treinador compartilham a mesma composição. */
+.campArt{display:none}
+[data-screen=camp] .mapsection,[data-screen=camp] #bottom{display:none}
+#gameShell[data-screen=camp] main{max-width:1180px}
+#gameShell[data-screen=camp] .layout{grid-template-columns:minmax(0,1.12fr) minmax(340px,1fr);gap:0;border-radius:22px;overflow:hidden;box-shadow:0 16px 55px #00151988;border:1px solid #b59b6b}
+[data-screen=camp] .campArt{display:flex;position:relative;min-height:510px;align-items:flex-end;background-color:#426e65;background-image:linear-gradient(0deg,#0b292e 0%,#0b292e77 20%,transparent 47%),url('../assets/menu-inicial.png');background-size:cover,320% auto;background-repeat:no-repeat;background-position:center,left bottom}
+.campCaption{position:relative;padding:clamp(20px,3.5vw,50px);color:#fff6dd}.campCaption h1{font:800 clamp(36px,4vw,68px)/.98 var(--display);letter-spacing:-.055em;margin:0}.campCaption p{max-width:35ch;font-size:15px;margin-top:12px}
+[data-screen=camp] .sidecolumn{position:static;background:var(--paper)}
+[data-screen=camp] #panel{border:0;box-shadow:none;border-radius:0;padding:clamp(18px,2.4vw,35px)}
+[data-screen=camp] .intro,[data-screen=camp] .artstrip,[data-screen=camp] .eyebrow{display:none}
+[data-screen=camp] #panel h2{font:750 32px var(--display);margin:0 0 16px}
+.identity{background:#d8caaa26;border-color:#a98e644f}.spriteGrid img{height:33px}
+.identity .spriteGrid label:has(:checked){background:#8fae9633}
+#actionWindow{border:2px solid #a98e59;background:var(--paper);box-shadow:0 6px 0 #10272c,0 22px 85px #001519bc}
+.arenaTop{background:linear-gradient(110deg,#193538,#2d574b);border-bottom:2px solid var(--copper)}
+#actionWindow .modalhead{background:transparent;padding:2px 0 8px}
+#actionWindow .modalhead h2{font:750 clamp(24px,3.3vw,39px)/1.05 var(--display);letter-spacing:-.055em}
+dialog::backdrop{background:#0d2529a6}
+.wildScene{min-height:147px;border:2px solid #86986a;box-shadow:inset 0 0 0 3px #cdda9f;background:radial-gradient(ellipse at 18% 90%,#607b4b55,transparent 40%),linear-gradient(#d6e2ad 55%,#a6bf87 55% 70%,#8ba678 70%)}
+.wildPlatform .heroChip{width:116px}.wildFaces span{background:#fbf6d4;border-radius:4px;padding:0 3px}
+.duel{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 20% 100%,#1d80704f,transparent 50%),linear-gradient(115deg,#244746 49.5%,#d4b879 49.7%,#d4b879 50%,#453941 50.3%);border:1px solid #866f4d}
+.duel> b{font:900 23px var(--display);color:#fbe2a5;text-shadow:0 3px #242f2c}
+.attackScore{max-width:190px}.attackScore li:last-child{background:#f0d297;color:#29372e}
+#actionWindow .guidance{border-radius:8px;background:#e5eddf;color:#233f36}#actionWindow .guidance b{color:#355447}
+#actionWindow .lastOutcome{background:#f1ead7;border:0;border-left:4px solid #b58a47;box-shadow:none}
+[data-theme=dark]{--paper:#1a2428}
+[data-theme=dark] #gameShell{background:radial-gradient(ellipse at top left,#172529,#000 70%)}
+[data-theme=dark] #gameShell header{background:#0b1519}[data-theme=dark] #actionWindow .lastOutcome{background:#26342f}
+[data-theme=dark] #actionWindow .guidance,[data-theme=dark] #actionBar{background:#23463e;color:#f1f4e5}
+[data-theme=dark] #actionWindow .guidance b,[data-theme=dark] #actionBar b{color:#f2d89d}
+@media(max-width:780px){#gameShell .layout,#gameShell[data-screen=camp] .layout{grid-template-columns:1fr}#gameShell main{padding:12px}.campCaption{padding:16px}.campCaption h1{font-size:30px}[data-screen=camp] .campArt{min-height:145px;background-size:cover,170% auto;background-position:center,left 56%}.campCaption p{font-size:12px}#gameShell header{height:52px}.brand{font-size:17px}.rhythm{margin-left:0}.musicbar{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){.handCard:hover .cardface{transform:none}}
+
+[data-screen=camp] .campArt{align-self:stretch;min-height:540px;background-size:cover,auto 135%;background-position:center,left bottom}
+.identity{position:relative;padding:13px;border-radius:12px;box-shadow:inset 0 2px 6px #5544290c}
+.identityPortrait{position:absolute;top:0;left:12px;width:64px;height:82px;display:grid;place-items:center;background:radial-gradient(ellipse at center bottom,#b9c9a5,#d0cbb414 80%);border-bottom:4px solid var(--trainer);border-radius:6px}
+.identityPortrait img{width:46px;height:74px;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(1px 2px 1px #0003)}
+.identity>label{margin-left:76px;gap:6px}.identity>label input,.identity>label select{border:1px solid #9eab9760;background:var(--paper);color:inherit;border-radius:6px;padding:6px 8px}
+.identity legend{font:700 14px var(--display);padding:0 5px}.identity .spriteGrid{padding-top:5px}
+.duel:before,.duel:after{content:'';position:absolute;inset:0;pointer-events:none;z-index:-1}
+.duel:before{background:linear-gradient(90deg,#132b33bd,#19403b96 45%,#312a36da),url('../assets/menu-inicial.png') left 55% / 250% auto;opacity:.56}
+.duel:after{background:linear-gradient(116deg,transparent 49.6%,#e4cd91 49.8%,#e4cd91 50%,transparent 50.2%)}
+.duel> b{display:grid;place-items:center;align-self:center;width:40px;height:40px;background:#263e3a;border:2px solid #c9ae78;border-radius:50%;transform:rotate(-9deg);font:italic 800 18px var(--display)}
+.duel .duelist{width:min(22vw,125px);filter:drop-shadow(0 8px 5px #0007)}
+#activity:has(#messages:empty) #messages{height:auto}.campCaption h1{text-wrap:balance}
+@media(min-width:781px){[data-screen=camp] .sidecolumn{max-height:max(610px,calc(100dvh - 145px));overflow:auto}}
+@media(max-width:780px){[data-screen=camp] .campArt{min-height:175px;background-size:cover,auto 270%;background-position:center,10% 54%}.campCaption{padding:15px;background:linear-gradient(90deg,#0d2c30d9,transparent);width:100%}.campCaption p{max-width:32ch}}
+
+.forkTrails{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;stroke-linecap:round;stroke-linejoin:round}
+.mapsection .marker.forkPin{background:var(--branch);color:white;border-color:#fff3d2;box-shadow:0 1px 0 2px #244438,0 3px 7px #0007;min-width:23px;line-height:1;animation:forkIn .26s ease-out}
+.forkCaption{position:absolute;left:102%;top:45%;display:flex;align-items:center;gap:3px;padding:4px 6px;min-width:72px;width:max-content;max-width:125px;border:1px solid #ddc58a;border-radius:7px;background:#173d39f5;color:#fff7dc;text-align:left;font:600 11px/1.18 "Segoe UI",sans-serif;box-shadow:0 2px 5px #10292470}.forkCaption.leftSide{left:auto;right:102%}.forkCaption img{width:24px}.forkPin:hover,.forkPin:focus-visible{z-index:8}
+.forkHint{background:#7ba58c22;border-radius:8px;padding:9px 12px;margin-top:9px;font-size:13px}.forkHint p{padding-top:7px}
+.arrivalSign{pointer-events:none;position:absolute;z-index:8;transform:translate(-50%,-100%);padding:5px 11px;border-radius:6px;border:2px solid #edd197;background:#15372d;color:#fff1cc;box-shadow:0 3px 0 #152b23;line-height:1.25;text-align:center;white-space:nowrap;animation:signIn .23s ease-out}.arrivalSign small{display:block}
+@keyframes forkIn{from{opacity:.3;scale:.8}to{opacity:1;scale:1}}@keyframes signIn{from{opacity:0;translate:0 6px}to{opacity:1;translate:none}}
+@media(prefers-reduced-motion:reduce){.mapsection .marker.forkPin,.arrivalSign{animation:none}}
+
+.forkPin:focus-visible,.mapsection .forkPin:hover{outline:3px solid #fff;outline-offset:2px;box-shadow:0 0 0 6px #234b47}
+#gameShell:not(.travelling) .impact{animation:rewardGlow .8s ease-out both}
+@keyframes rewardGlow{0%{box-shadow:inset 0 0 0 2px #eac36a,0 0 12px #e4b84c75}100%{box-shadow:inset 0 0 0 0 transparent}}
+@media(prefers-reduced-motion:reduce){#gameShell:not(.travelling) .impact{animation:none}}
